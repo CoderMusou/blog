@@ -68,7 +68,7 @@
                   <a href="#">{{$k}}</a>
                     @endforeach
                 </span>
-                <span class="look"> 共 <strong>{{$n->art_view}}</strong> 人围观，发现 <strong> 12 </strong> 个不明物体 </span>
+                <span class="look"> 共 <strong>{{$n->art_view}}</strong> 人围观，发现 <strong> 0 </strong> 个不明物体 </span>
               </div>
             </div>
           </div>

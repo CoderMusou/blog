@@ -10,7 +10,7 @@
             </div>
           @endforeach
       </div>
-    <div class="content-block comment">
+    {{-- <div class="content-block comment">
       <h2 class="title"><strong>提交友链</strong></h2>
       <form action="message.php" method="post" class="form-inline" id="comment-form">
         <div class="comment-title">
@@ -31,7 +31,7 @@
               <button type="submit" class="btn btn-default btn-comment">提交友链</button>
             </div>
           </div>
-        </div>
+        </div> --}}
       </form>
     </div>
 @endsection
