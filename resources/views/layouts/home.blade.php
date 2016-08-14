@@ -8,6 +8,7 @@
     <link href="{{asset('resources/views/home/css/bootstrap.min.css')}}" type="text/css" rel="stylesheet" />
     <link href="{{asset('resources/views/home/css/style.css')}}" type="text/css" rel="stylesheet">
     <link href="{{asset('resources/views/home/css/nprogress.css')}}" type="text/css" rel="stylesheet">
+    <link href="{{asset('resources/views/home/css/component.css')}}" type="text/css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="{{asset('resources/views/home/js/html5shiv.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('resources/views/home/js/respond.min.js')}}" type="text/javascript"></script>
@@ -53,22 +54,23 @@
         <!--/超小屏幕不显示-->
         <div class="visible-xs header-xs">
             <!--超小屏幕可见-->
-            <div class="navbar-header header-xs-logo">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-xs-menu" aria-expanded="false" aria-controls="navbar"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
-            </div>
-            <div id="header-xs-menu" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav header-xs-nav">
+            <a href="#" class="logo"><img src="{{asset('resources/views/home/images/logo2.png')}}" alt="wseek"></a>
+            <div id="dl-menu" class="dl-menuwrapper" >
+                <button id="dl-menu-button">Open Menu</button>
+                <ul class="dl-menu">
                     @foreach($navs as $v)
-                        <li class="active"><a href="{{$v->nav_url}}"><span class="{{$v->nav_alias}}"></span>{{$v->nav_name}}</a></li>
+                    <li><a href="{{$v->nav_url}}"><span class="{{$v->nav_alias}}"></span>　{{$v->nav_name}}</a></li>
                     @endforeach
+                    {{--<li>--}}
+                        {{--<a href="Line">自由行</a>--}}
+                        {{--<ul class="dl-submenu">--}}
+                            {{--<li class="dl-back"><a href="#">返回上一级</a></li>--}}
+                            {{--<li><a href="#">线路</a></li>--}}
+                            {{--<li><a href="#">签证</a></li>--}}
+                            {{--<li><a href="#">门票</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
                 </ul>
-                <form class="navbar-form" action="{{url('/search')}}" method="post" style="padding:0 25px;">
-                    {{csrf_field()}}
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="key_word" placeholder="请输入关键字" />
-                        <span class="input-group-btn"> <button class="btn btn-default btn-search" type="submit">搜索</button> </span>
-                    </div>
-                </form>
             </div>
         </div>
     </header>
@@ -120,6 +122,9 @@
 <script src="{{asset('resources/views/home/js/nprogress.js')}}" type="text/javascript"></script>
 <script src="{{asset('resources/views/home/js/bootstrap.min.js')}}" type="text/javascript"></script>
 <script type="text/javascript" src="{{asset('resources/org/layer/layer.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('resources/views/home/js/modernizr.custom.js')}}"></script>
+<script type="text/javascript" src="{{asset('resources/views/home/js/jquery.dlmenu.js')}}"></script>
 <script type="text/javascript">
     //页面加载
     $('body').show();
@@ -213,6 +218,10 @@
         || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
     <!-- 多说公共JS代码 end -->
+
+    $(function(){
+        $( '#dl-menu' ).dlmenu();
+    });
 </script>
 @yield('script')
 </body>

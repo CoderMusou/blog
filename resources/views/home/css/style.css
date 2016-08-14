@@ -64,6 +64,7 @@ body, input, button, textarea, select {
 	width: 1280px;
 }
 }
+
 /*导航样式开始*/
 .header {
 	position: fixed;
@@ -121,6 +122,20 @@ body, input, button, textarea, select {
 #header-xs-menu {
 	background-color: #f6f6f6;
 }
+/*手机导航样式开始*/
+.header-xs{position:relative;height:50px;background:#3399CC;width: 100%;}
+.header-xs .logo{display:block;width:130px;height:50px;padding:10px 0 0 10px;}
+.header-xs .logo img{display:block;width:100%;}
+.header-xs .search{position:absolute;top:0;right:50px;z-index:1000;display:block;width:50px;height:50px;text-indent:-9999em;background:url(../images/icon-search.png) no-repeat center center;background-size:40%;}
+.header-xs .search:hover{background-color:#3399BC;}
+.header-xs .search span{display:none;}
+.header-xs .user-icon{position:absolute;top:0;right:70px;z-index:1000;display:block;width:50px;height:50px;text-indent:-9999em;background:url(../images/icon-user.png) no-repeat center center;background-size:40%;}
+.header-xs .user-icon span{display:none;}
+.header-xs .user-icon:hover{background-color:#3399BC;}
+.header-xs .back{position:absolute;top:0;left:0;display:block;width:50px;height:50px;text-indent:-9999em;background:url(../images/icon-back.png) no-repeat center center;background-size:12px 20px;}
+.header-xs a {text-decoration:none;}
+.header-xs a:active,.header-xs a:hover {outline: 0;}
+/*@media (min-width:641px){body{width:640px;margin:auto;}}*/
 /*左侧关注样式开始*/
 .header .feeds {
 	padding: 15px 0 15px 15px;
